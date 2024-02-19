@@ -28,3 +28,24 @@ git clone https://github.com/CharlesTheGreat77/GoProxy
 cd GoProxy/
 go build main.go
 ```
+
+# Demo 🫡
+![demo](https://github.com/CharlesTheGreat77/GoProxy/assets/27988707/aabf821e-fa81-4b5e-847f-dacfe0518833)
+
+
+# Usage 👀
+```
+Usage of ./main:
+  -max int
+    	specify maximum number of proxies (default 10)
+  -output string
+    	specify output file (default "proxies.txt")
+  -scrape string
+    	specify option to scrape from [sslproxies, proxyscrape] (default "proxyscrape")
+```
+
+# Default 
+```
+./main
+```
+- Validates 10 proxies from proxyscrape by default and saves to proxies.txt
