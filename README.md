@@ -26,7 +26,11 @@ apt install golang
 ```
 git clone https://github.com/CharlesTheGreat77/GoProxy
 cd GoProxy/
-go build main.go
+go mod init main
+go mod tidy
+go build -o goproxy main.go
+sudo mv /usr/local/bin
+goproxy -h
 ```
 
 # Demo 🫡
