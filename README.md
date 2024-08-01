@@ -29,7 +29,7 @@ cd GoProxy/
 go mod init main
 go mod tidy
 go build -o goproxy main.go
-sudo mv /usr/local/bin
+sudo mv goproxy /usr/local/bin
 goproxy -h
 ```
 
