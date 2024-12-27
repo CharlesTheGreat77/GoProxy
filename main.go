@@ -105,7 +105,7 @@ func checkProxy(ctx context.Context, proxy string, validProxies *[]string, count
 			// seem to be hitting some google captchas for some proxies, use that as the proxy being valid
 			if e.Err.Error() == "stopped after 10 redirects" || strings.Contains(err.Error(), "Get \"https://www.google.com/sorry/") {
 				if *counter <= maxProxies-1 {
-					fmt.Printf("[*] Valid Proxy: %v\n", proxy)
+					fmt.Printf("[*] Valid Proxy: http://%v\n", proxy)
 					*validProxies = append(*validProxies, proxy)
 					*counter++
 				}
@@ -170,7 +170,7 @@ func main() {
 	defer file.Close()
 	fmt.Printf("[*] Saving to proxies.txt\n\n")
 	for _, proxy := range validProxies {
-		if _, err := file.WriteString(proxy + "\n"); err != nil {
+		if _, err := file.WriteString("http://" + proxy + "\n"); err != nil {
 			fmt.Println("[-] Error appending to file")
 		}
 	}
